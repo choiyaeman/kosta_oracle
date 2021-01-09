@@ -1,4 +1,4 @@
-# day02
+# day02 
 
 ![1](https://user-images.githubusercontent.com/63957819/104079332-d8f45d80-5265-11eb-9cfe-c7b198c6299e.png)
 
