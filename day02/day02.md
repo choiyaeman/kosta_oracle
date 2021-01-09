@@ -14,9 +14,9 @@ SQLDeveloper 오라클에서 무상으로 제공되는 툴을 쓰자 자바로 �
 
 >테스트 누르고 성공 상태 확인 > 접속> 
 
-![5](https://user-images.githubusercontent.com/63957819/104079336-db56b780-5265-11eb-834d-3da199262bb2.png)
+![4](https://user-images.githubusercontent.com/63957819/104079970-ed862500-5268-11eb-969f-8b1afe6ca8b7.png)
 
-![6](https://user-images.githubusercontent.com/63957819/104079337-dbef4e00-5265-11eb-9420-b358127afab6.png)
+![5](https://user-images.githubusercontent.com/63957819/104079971-ee1ebb80-5268-11eb-8af7-3ec621f6dc24.png)
 
 위와 같은 방법으로 새 접속 추가> 접속이름: LocalHR> 사용자 이름: hr> 비밀번호:hr> 접속
 
@@ -46,7 +46,7 @@ SQLDeveloper 오라클에서 무상으로 제공되는 툴을 쓰자 자바로 �
   ex)SQL> @c:\Scott_Create
 ```
 
-![7](https://user-images.githubusercontent.com/63957819/104079342-dc87e480-5265-11eb-8bc1-67b46eb7728f.png)
+![6](https://user-images.githubusercontent.com/63957819/104079972-ee1ebb80-5268-11eb-9705-3d95dbd65028.png)
 
 Scott_Create.sql 다운로드 후 MYSQL파일 하나 만들어서 안에 넣음. 그리고 cmd창에서 테이블 생성 및 데이터를 추가 해보자.
 
@@ -62,11 +62,11 @@ conn scott/tiger
 
 scott계정을 사용하고 싶으면 엔터프라이즈 에디션용 오라클을 설치 안 했으므로 스콥 계정 만들어서 필요한 테이블을 넣어주면 된다. cmd 창 열어서 작업go~
 
-![8](https://user-images.githubusercontent.com/63957819/104079343-dc87e480-5265-11eb-8da7-38152a2640bc.png)
+![7](https://user-images.githubusercontent.com/63957819/104079974-eeb75200-5268-11eb-8c53-b4aabd27c017.png)
 
 접속을 만들어주자 접속 추가>접속이름: LocalSCOTT, 계정: scott, 비번: tiger, 호스트: localhost
 
-![9](https://user-images.githubusercontent.com/63957819/104079344-dd207b00-5265-11eb-9cf4-88a5b074de46.png)
+![8](https://user-images.githubusercontent.com/63957819/104079975-eeb75200-5268-11eb-95fa-2c46ea01fff4.png)
 
 selection이라는 절차가 반복문이라 생각하자! 먼저 selection 을 하고 그리고 나서 projection을 하는 거다.
 
@@ -76,11 +76,11 @@ from절부터 사용할 테이블을 채워 놓고 어떤 컬럼들만 projectio
 
 띄어쓰기와 줄 바꿈 적극 사용하자~
 
-![10](https://user-images.githubusercontent.com/63957819/104079346-ddb91180-5265-11eb-8a43-89dd3bbfcb52.png)
+![9](https://user-images.githubusercontent.com/63957819/104079976-ef4fe880-5268-11eb-96b6-5f7e4eb17082.png)
 
-![11](https://user-images.githubusercontent.com/63957819/104079347-ddb91180-5265-11eb-99b6-a77f6a924353.png)
+![10](https://user-images.githubusercontent.com/63957819/104079977-ef4fe880-5268-11eb-8c28-cf0b7f7a4777.png)
 
-![12](https://user-images.githubusercontent.com/63957819/104079348-de51a800-5265-11eb-80ab-103ffd594537.jpg)
+![11](https://user-images.githubusercontent.com/63957819/104079978-efe87f00-5268-11eb-875e-042f8267a283.png)
 
 파일> 새로 만들기> 데이터베이스 파일> 이름, 디렉토리 지정> 확인 후 LocalSCOTT으로 열자
 
@@ -298,25 +298,25 @@ sqlplus에서는 null값이 아무 값도 표현이 안된다. 표현이 이렇�
 교집합을 알리는 연산자는 INTERSECT 이다.
 서로 컬럼 개수와 자료형이 모두 같아야 한다.
 
-![13](https://user-images.githubusercontent.com/63957819/104079350-de51a800-5265-11eb-86ee-1fffb4b29ea2.png)
+![12](https://user-images.githubusercontent.com/63957819/104079980-efe87f00-5268-11eb-8e4b-94d1115a4f84.jpg)
 
 AB_C▤ → AB_C 다음 글자 1개를 찾겠다라는 의미인데. 그냥 LIKE로 해주면 위의 해당 테이블 A에서 
 
 AB_CD, ABXCA, AB_CA, AB_CAA 등 모두 문자열이 찾아질 수가 있다. 그러므로 AB_에서 _일반 문자로 표현하기 위해서는 ESCAPE를 쓰면 된다. 그러면 AB_에서 _를 패턴 형식이 아닌 일반 문자로 인식하고 C 다음 글자 1개인 것 중에 AB_CD, AB_CA가 될 수 있다.
 
-![14](https://user-images.githubusercontent.com/63957819/104079352-deea3e80-5265-11eb-9833-9dd0a327bd75.png)
+![13](https://user-images.githubusercontent.com/63957819/104079981-f0811580-5268-11eb-8a4e-d24b50c7f693.png)
 
 서버까지 가야 한다 네트워크 비용을 쓴다는 건데 금액도 금액이지만 처리 속도가 핵심인데 sql구문이 전송이 빨리 되어야 한다면 단순해야 한다. sql구문이 최적화 되어야 한다.
 
-![15](https://user-images.githubusercontent.com/63957819/104079353-deea3e80-5265-11eb-86b2-f0cc13d687ce.png)
+![14](https://user-images.githubusercontent.com/63957819/104079982-f0811580-5268-11eb-9af6-f7e5937f48b7.png)
 
-![16](https://user-images.githubusercontent.com/63957819/104079354-df82d500-5265-11eb-8cd9-1e7818bd728d.png)
+![15](https://user-images.githubusercontent.com/63957819/104079984-f119ac00-5268-11eb-8519-a110fb53b47f.png)
 
 JOB HISTORY와 EMPLOYEESS 테이블의 데이터를 보면, JOB HISTORY 란  경력 증명 history를 말한다.  EMPLOYEES 테이블은 현재 업무 기록이 담겨있고 JOB_HISTORY테이블에는 이전 업무 기록이 담겨있는 거다.
 
 ---
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%2014.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%2014.png)
+![16](https://user-images.githubusercontent.com/63957819/104079985-f119ac00-5268-11eb-8c77-3d1d8d63325a.png)
 
 scott_funtion이름이라는 새로운 파일을 또 만들어주자
 
