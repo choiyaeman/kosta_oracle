@@ -1,0 +1,22 @@
+1) Scott_Create.sql파일을 c:\에 다운로드한다
+2) cmd창에서 sqlplus실행
+   ex) C:\Users\KITRI> sqlplus
+
+3) 관리자계정에 접속한다
+   계정명-system, 암호-kitri
+  ex) Enter user-name: system
+       Enter password:
+4) 계정을 추가한다
+    계정명-scott, 암호-tiger
+  ex)SQL> create user scott identified by tiger;
+5) 계정 권한부여
+    scott계정의 접속권한, 자원사용권한을 부여한다
+  ex)SQL> grant connect, resource to scott;
+
+6) scott계정에 접속한다
+  ex)SQL> conn scott/tiger
+
+7) 테이블 생성및 데이터추가
+   Scott_Create.sql파일을 실행해서 한다
+  ex)SQL> @c:\Scott_Create
+
