@@ -1,22 +1,22 @@
 # day02
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled.png)
+![1](https://user-images.githubusercontent.com/63957819/104079332-d8f45d80-5265-11eb-9cfe-c7b198c6299e.png)
 
 SQLDeveloper 오라클에서 무상으로 제공되는 툴을 쓰자 자바로 만들어진 툴 이고 버전에 민감한데 
 
 자바 11버전에는 잘 버전 되나 그 이상은 잘 구동 되지 않을 수 있다. sqldeveloper 실행!!
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%201.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%201.png)
+![2](https://user-images.githubusercontent.com/63957819/104079333-da258a80-5265-11eb-9459-390a1ab964bb.png)
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%202.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%202.png)
+![3](https://user-images.githubusercontent.com/63957819/104079334-dabe2100-5265-11eb-9ef2-cf68f57739bd.png)
 
 새 접속 추가> 접속 이름: LocalSYSTEM, 사용자 이름: system, 비밀번호: kosta
 
 >테스트 누르고 성공 상태 확인 > 접속> 
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%203.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%203.png)
+![4](https://user-images.githubusercontent.com/63957819/104079970-ed862500-5268-11eb-969f-8b1afe6ca8b7.png)
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%204.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%204.png)
+![5](https://user-images.githubusercontent.com/63957819/104079971-ee1ebb80-5268-11eb-8af7-3ec621f6dc24.png)
 
 위와 같은 방법으로 새 접속 추가> 접속이름: LocalHR> 사용자 이름: hr> 비밀번호:hr> 접속
 
@@ -46,7 +46,7 @@ SQLDeveloper 오라클에서 무상으로 제공되는 툴을 쓰자 자바로 �
   ex)SQL> @c:\Scott_Create
 ```
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%205.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%205.png)
+![6](https://user-images.githubusercontent.com/63957819/104079972-ee1ebb80-5268-11eb-9705-3d95dbd65028.png)
 
 Scott_Create.sql 다운로드 후 MYSQL파일 하나 만들어서 안에 넣음. 그리고 cmd창에서 테이블 생성 및 데이터를 추가 해보자.
 
@@ -62,11 +62,11 @@ conn scott/tiger
 
 scott계정을 사용하고 싶으면 엔터프라이즈 에디션용 오라클을 설치 안 했으므로 스콥 계정 만들어서 필요한 테이블을 넣어주면 된다. cmd 창 열어서 작업go~
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%206.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%206.png)
+![7](https://user-images.githubusercontent.com/63957819/104079974-eeb75200-5268-11eb-8c53-b4aabd27c017.png)
 
 접속을 만들어주자 접속 추가>접속이름: LocalSCOTT, 계정: scott, 비번: tiger, 호스트: localhost
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%207.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%207.png)
+![8](https://user-images.githubusercontent.com/63957819/104079975-eeb75200-5268-11eb-95fa-2c46ea01fff4.png)
 
 selection이라는 절차가 반복문이라 생각하자! 먼저 selection 을 하고 그리고 나서 projection을 하는 거다.
 
@@ -76,11 +76,11 @@ from절부터 사용할 테이블을 채워 놓고 어떤 컬럼들만 projectio
 
 띄어쓰기와 줄 바꿈 적극 사용하자~
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%208.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%208.png)
+![9](https://user-images.githubusercontent.com/63957819/104079976-ef4fe880-5268-11eb-96b6-5f7e4eb17082.png)
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%209.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%209.png)
+![10](https://user-images.githubusercontent.com/63957819/104079977-ef4fe880-5268-11eb-8c28-cf0b7f7a4777.png)
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%2010.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%2010.png)
+![11](https://user-images.githubusercontent.com/63957819/104079978-efe87f00-5268-11eb-875e-042f8267a283.png)
 
 파일> 새로 만들기> 데이터베이스 파일> 이름, 디렉토리 지정> 확인 후 LocalSCOTT으로 열자
 
@@ -298,25 +298,25 @@ sqlplus에서는 null값이 아무 값도 표현이 안된다. 표현이 이렇�
 교집합을 알리는 연산자는 INTERSECT 이다.
 서로 컬럼 개수와 자료형이 모두 같아야 한다.
 
-![day02%20c9b63f12415649c48b65f788940c881c/20210108_160925.jpg](day02%20c9b63f12415649c48b65f788940c881c/20210108_160925.jpg)
+![12](https://user-images.githubusercontent.com/63957819/104079980-efe87f00-5268-11eb-8e4b-94d1115a4f84.jpg)
 
 AB_C▤ → AB_C 다음 글자 1개를 찾겠다라는 의미인데. 그냥 LIKE로 해주면 위의 해당 테이블 A에서 
 
 AB_CD, ABXCA, AB_CA, AB_CAA 등 모두 문자열이 찾아질 수가 있다. 그러므로 AB_에서 _일반 문자로 표현하기 위해서는 ESCAPE를 쓰면 된다. 그러면 AB_에서 _를 패턴 형식이 아닌 일반 문자로 인식하고 C 다음 글자 1개인 것 중에 AB_CD, AB_CA가 될 수 있다.
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%2011.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%2011.png)
+![13](https://user-images.githubusercontent.com/63957819/104079981-f0811580-5268-11eb-8a4e-d24b50c7f693.png)
 
 서버까지 가야 한다 네트워크 비용을 쓴다는 건데 금액도 금액이지만 처리 속도가 핵심인데 sql구문이 전송이 빨리 되어야 한다면 단순해야 한다. sql구문이 최적화 되어야 한다.
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%2012.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%2012.png)
+![14](https://user-images.githubusercontent.com/63957819/104079982-f0811580-5268-11eb-9af6-f7e5937f48b7.png)
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%2013.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%2013.png)
+![15](https://user-images.githubusercontent.com/63957819/104079984-f119ac00-5268-11eb-8519-a110fb53b47f.png)
 
 JOB HISTORY와 EMPLOYEESS 테이블의 데이터를 보면, JOB HISTORY 란  경력 증명 history를 말한다.  EMPLOYEES 테이블은 현재 업무 기록이 담겨있고 JOB_HISTORY테이블에는 이전 업무 기록이 담겨있는 거다.
 
 ---
 
-![day02%20c9b63f12415649c48b65f788940c881c/Untitled%2014.png](day02%20c9b63f12415649c48b65f788940c881c/Untitled%2014.png)
+![16](https://user-images.githubusercontent.com/63957819/104079985-f119ac00-5268-11eb-8c77-3d1d8d63325a.png)
 
 scott_funtion이름이라는 새로운 파일을 또 만들어주자
 
