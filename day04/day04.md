@@ -265,7 +265,7 @@ WHERE location_id >= 2000
 GROUP BY location_id; 
 
 4. 하반기(7~12월) 월별 입사자수를 출력하시오.입사자수가 5명이상인 경우만 출력한다 
-SELECT TO_NUMBER(TO_CHAR(hire_date, 'MM'))||'월', COUNT(employee_id)
+SELECT TO_NUMBER(TO_CHAR(hire_date, 'MM'))||'월', COUNT(*)
 FROM employees
 WHERE TO_NUMBER(TO_CHAR(hire_date, 'MM'))>=7 
 GROUP BY TO_NUMBER(TO_CHAR(hire_date, 'MM'))
