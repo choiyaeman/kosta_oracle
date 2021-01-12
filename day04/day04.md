@@ -156,7 +156,7 @@ FROM employees e JOIN departments d USING(department_id)
 GROUP BY department_name;
 ```
 
-![day04%208aa7838217d84b82a2d076a199740e2f/Untitled.png](day04%208aa7838217d84b82a2d076a199740e2f/Untitled.png)
+![1](https://user-images.githubusercontent.com/63957819/104306918-eb92bf00-5511-11eb-8195-14b81bf908f1.png)
 
 이 두 테이블의 자료를 JOIN을 시켜야 하는가?
 
@@ -166,7 +166,7 @@ FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY
 
 emp, deptno 두 개의 테이블을 사용하겠다는 from절을 만들면 selection을 할거다라는 의미. emp테이블의 한 테이블의 한 행을 읽고 dept의 한 행을 읽는다.  그 한 행 읽은 다음에 아무런 조건이 없으므로 2번째 행, 3번째 행, 4번째 행을 다 읽고 없으면 emp테이블 첫 번째 행에서 두 번째 행으로 옮기고 dept도 두 번째 행으로 옮기고, 세 번째..이렇게 14번째 행까지 총 14*4 곱하기 결과가 나온다.
 
-![day04%208aa7838217d84b82a2d076a199740e2f/Untitled%201.png](day04%208aa7838217d84b82a2d076a199740e2f/Untitled%201.png)
+![2](https://user-images.githubusercontent.com/63957819/104306924-ecc3ec00-5511-11eb-9511-8c3887083579.png)
 
 첫 번째 테이블의 같은 값을 가지는 두 번째 테이블 행을 찾아라 해서where절이 들어간다. 14개 행이 부서 번호를 찾는다.
 
@@ -194,7 +194,7 @@ NATURAL JOIN 양쪽 테이블의 똑같은 컬럼이 있으면 무조건 on절�
 
 USING절을 줘서 양쪽 테이블의 같은 컬럼명중 같은 이름이 같은 특정 컬럼만 JOIN에 참여 시키겠다.
 
-![day04%208aa7838217d84b82a2d076a199740e2f/Untitled%202.png](day04%208aa7838217d84b82a2d076a199740e2f/Untitled%202.png)
+![3](https://user-images.githubusercontent.com/63957819/104306927-ed5c8280-5511-11eb-873a-e1f368a485ff.png)
 
 DEPARTMENTS에  MANAGER_ID는 부서장을의미하는매니저 아이디이다.
 
@@ -204,7 +204,7 @@ DEPARTMENTS테이블의 컬럼 MANAGER_ID는 자식 EMPLOYEES테이블의 컬럼
 
 DEPARTMESTS테이블은 부모, 자식의 역할을 할 수 있다.
 
-![day04%208aa7838217d84b82a2d076a199740e2f/Untitled%203.png](day04%208aa7838217d84b82a2d076a199740e2f/Untitled%203.png)
+![4](https://user-images.githubusercontent.com/63957819/104306929-edf51900-5511-11eb-83a4-84bdd23a5d52.png)
 
 EMPLOYEES 테이블의 DEPARTMENT_ID, MANGER_ID와 DEPARTMENTS 테이블의 DEPARTMENT_ID, MANGER_ID는 서로 컬럼이 같아도 다른 의미로 쓰인다.
 
