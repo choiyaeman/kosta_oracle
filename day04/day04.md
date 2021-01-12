@@ -334,10 +334,10 @@ WHERE location_id >= 2000
 GROUP BY location_id;
 
 4번. SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY를 쭉 나열하고 빈칸채우기로 해결
-처리순서별로 1) FROM 테이블명 employees
+처리순서별로 
+1) FROM 테이블명 employees
 2)WHERE 일반 조건 입사월이 7월부터 12월까지 TO_NUMBER(TO_CHAR(hire_date, 'MM')) >= 7
 3)GROUP BY XX별 월별 TO_NUMBER(TO_CHAR(hire_date, 'MM'))
-
 4)HAVING 그룹에 대한 조건 입사자수가 5명 이상 COUNT(*) >= 5
 
 5번. LIKE대신 그냥 = 'Davis'
