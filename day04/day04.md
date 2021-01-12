@@ -249,7 +249,7 @@ SELECT employee_id,
        salary, 
        NVL(commission_pct, 0)
 FROM employees
-WHERE department_id NOT IN(30, 60, 90);
+WHERE salary >= 10000 AND department_id NOT IN(30, 60, 90);
 
 2.급여가 4000보다 많은 사원들의 부서별 급여평균를 출력하시오. 단 급여평균은 소숫점이하2자리에서 반올림합니다. 
 SELECT department_id, ROUND(AVG(salary), 1)
