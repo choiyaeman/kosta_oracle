@@ -4,9 +4,9 @@ UNION은 행을 결합하는 연산자
 
 JOIN은 특정 칼럼 값과 같은 값을 갖는 애를 찾아 결합하는 연산자
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled.png](day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled.png)
+![1](https://user-images.githubusercontent.com/63957819/104461612-ece7e880-55f2-11eb-9a35-75fbf9068db3.png)
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%201.png](day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%201.png)
+![2](https://user-images.githubusercontent.com/63957819/104461617-eeb1ac00-55f2-11eb-9049-b630795d1c04.png)
 
 employee_id, manager_id 를 보면 100사원은 관리자가 없는 사원, 다른 사원들은 다 관리자가 있다.
 
@@ -96,11 +96,11 @@ SELECT employee_id, d.department_id, department_name
 FROM employees e FULL JOIN departments d ON (e.department_id = d.department_id); --FULL OUTER JOIN으로 양쪽 자료를 모두 출력할 수 있다. 부서가 없는 사원178번, 사원이 없는 부서
 ```
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%202.png](day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%202.png)
+![3](https://user-images.githubusercontent.com/63957819/104461619-ef4a4280-55f2-11eb-9422-43f69e0b8d14.png)
 
 관리자 아이디가 null인 경우 매니저 아이디에 해당하는 사원 정보가 없다. 총 사원수가 107명인데 추출된 결과 값은 106명이 출력이 된다.
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%203.png](day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%203.png)
+![4](https://user-images.githubusercontent.com/63957819/104461621-ef4a4280-55f2-11eb-9940-31241bb5d365.png)
 
 departments테이블의 기준이 될 수 있는게 department_id이므로 pk가 되고 employees테이블의 department_id는 fk가 된다. employees(자식) , departments(부모) 
 
@@ -114,7 +114,7 @@ FULL OUTER 는 양쪽 자료를 모두 출력
 
 ---
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%204.png](day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%204.png)
+![5](https://user-images.githubusercontent.com/63957819/104461623-efe2d900-55f2-11eb-86c1-9914a7957981.png)
 
 WHERE절에서 사용하는 서브 쿼리. 연산 우선순위가 서브 쿼리가 먼저 처리된다!!
 
@@ -299,7 +299,7 @@ salary      department_id
 
 sql문을 실행하는 데 필요한 데이터를 추가로 조회하기 위해 sql문 내부에서 사용하는 select문을 의미. 서브쿼리의 결과 값을 사용하여 기능을 수행하는 영역은 메인쿼리라 부른다.
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/20210113_120435.jpg](day05%20d41d984a7fd44a86801f1e22fcd22c2d/20210113_120435.jpg)
+![6](https://user-images.githubusercontent.com/63957819/104461627-efe2d900-55f2-11eb-873e-65352e350863.jpg)
 
 > **서브쿼리의 특징**
 
@@ -324,7 +324,7 @@ sql문을 실행하는 데 필요한 데이터를 추가로 조회하기 위해 
 
 **EXISTS** : 서브쿼리의 결과가 존재하면(즉, 행이 1개 이상일 경우) true
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%205.png](day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%205.png)
+![7](https://user-images.githubusercontent.com/63957819/104461628-f07b6f80-55f2-11eb-8815-34326a94c6d0.png)
 
 서브쿼리의 결과 값 중 값의 범위가 950, 1250, 15000, 160, 2850
 
@@ -338,13 +338,13 @@ sql문을 실행하는 데 필요한 데이터를 추가로 조회하기 위해 
 
 <ALL : 최소값보다 작다
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%206.png](day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%206.png)
+![8](https://user-images.githubusercontent.com/63957819/104461629-f07b6f80-55f2-11eb-9478-f78c0567c32e.png)
 
 NOT IN연산자가 IN연산자의 반대인데 NULL값을 포함하고 있는 경우에 큰 문제를 일으킬 수 있다.
 
 AND연산은 좌측, 우측 모두 true일 때만 true를 반환한다. a<>NULL 만족하는 행은 하나도 없다 false이므로 하나가 false이면 모두 false가 된다. 문제 발생!
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%207.png](day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%207.png)
+![9](https://user-images.githubusercontent.com/63957819/104461630-f1140600-55f2-11eb-98e6-16ba68ff329a.png)
 
 NULL일 경우 해결 방법은 NVL으로 치환 시켜줘야 한다.
 
@@ -376,23 +376,23 @@ FROM절에 사용하는 서브쿼리는 인라인뷰라고 부른다. 인라인 
 
 ---
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%208.png](day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%208.png)
+![10](https://user-images.githubusercontent.com/63957819/104461633-f1ac9c80-55f2-11eb-9eb0-1d25a972b3e6.png)
 
 건수가 0건 왜?? rownum은 기본값이 1인상태고 행을만나면 1증가시켜서 발급하는거다. 근데 11~20조건에 만족하지 않죠? rownum이 1이므로
 
 인라인뷰를 사용해서 페이지 그룹핑을 할 수 있다.
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%209.png](day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%209.png)
+![11](https://user-images.githubusercontent.com/63957819/104461635-f1ac9c80-55f2-11eb-96b4-8352e0eb09b3.png)
 
 SELECTIONS 절차에서 찾아온 그 행이 갖고 있는 department_id와 부서 아이디 정보를 추출하는 것
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%2010.png](day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%2010.png)
+![12](https://user-images.githubusercontent.com/63957819/104461637-f2453300-55f2-11eb-91db-2378dcd21cd9.png)
 
 상호연관서브쿼리는 메인쿼리에 있는 from한 행을 찾아서 그 행을 where조건에 사용하려 하는데 그 행을 서브쿼리에서 사용하는 거다. 처리된 결과 값이salary가 where조건에 salary 비교대상으로 삼는 것이다.
 
 EXISTS 상호연관서브쿼리에서만 쓸 수 있는 연산자이다.
 
-![day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%2011.png](day05%20d41d984a7fd44a86801f1e22fcd22c2d/Untitled%2011.png)
+![14](https://user-images.githubusercontent.com/63957819/104461638-f2453300-55f2-11eb-99af-271a59476de2.png)
 
 메인쿼리의 departments테이블을 exists연산자의 서브쿼리에서 이용.. 부서가 있는 사원의 부서 번호가 존재여부를 묻는 거다.  존재 한다면 departments의 department_id를 출력해라~! exists가 존재 한다면의 의미
 
