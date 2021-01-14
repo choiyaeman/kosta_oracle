@@ -1,6 +1,6 @@
 # day06
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled.png)
+![1](https://user-images.githubusercontent.com/63957819/104623648-ee3e1180-56d5-11eb-80a8-906d49bcc42b.png)
 
 사원 테이블이 기준 부족한 쪽에 부서 테이블 왼쪽에 기준을 삼고 싶다 하면 Left outer, 오른쪽에 기준을 삼고 싶다 하면 Right outer, 양쪽 테이블에 부족한 정보를 채우고 싶다면 full outer
 
@@ -8,7 +8,7 @@ Self Join는 자기 테이블을 자기가 참조하는 관계를 말한다. 매
 
 Join은 동시에 여러 테이블을 검색하는 절차를 한다. 그에 비해 서브 쿼리는 여러 테이블을 순서를 받고 처리되는 검색 방법이다.
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%201.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%201.png)
+![2](https://user-images.githubusercontent.com/63957819/104623653-ef6f3e80-56d5-11eb-8033-a248daeb623f.png)
 
 서브 쿼리가 먼저 처리가 된다. 서브 쿼리 결과 값이 한 개의 행만 반환 되는 경우, 여러 행으로 반환 되는 경우로 나눈다 했다. 이 예제는 단일 행을 반환한다. sales부서를 받는 행은 단 하나밖에 없기 때문이다. 일반 비교 연산자로 메인 쿼리와 비교할 수 있다. sales부서와 같은 부서 아이디를 갖는 결과가 메인 쿼리에 반환 된다. 
 
@@ -252,7 +252,7 @@ D:\CYM\MySQL\day06>sqlplus scott/tiger
 SQL> @scott_ddl  --sql파일을 load
 ```
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%202.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%202.png)
+![3](https://user-images.githubusercontent.com/63957819/104623654-ef6f3e80-56d5-11eb-936b-346b234526de.png)
 
 sqldeveloper에 들어가 보면 다시 만들어진 것을 볼 수 있다.
 
@@ -333,15 +333,15 @@ DELETE [FROM] [테이블 이름]
 
 [WHERE 삭제할 대상 행을 선별하기 위한 조건식];
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%203.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%203.png)
+![4](https://user-images.githubusercontent.com/63957819/104623657-f007d500-56d5-11eb-92e8-3d6a18de4ac0.png)
 
 옳지 않은 자료를 추가할 때 제약조건 이름이 나타면서 id,pk에 문제가 있는거구나 라고 생각하면 된다.   계정명.제약조건이름
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%204.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%204.png)
+![5](https://user-images.githubusercontent.com/63957819/104623658-f0a06b80-56d5-11eb-9024-aceb49808fce.png)
 
 제약조건 이름이 보이지 않는다. 제약조건 이름을 굳이 안 줘도 된다. 이유는? 제약조건 이름이 보이는게 아니라 NULL값이 들어왔다는 오류 메시지가 보이기 때문에 설정할 필요는 없다.
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%205.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%205.png)
+![6](https://user-images.githubusercontent.com/63957819/104623660-f0a06b80-56d5-11eb-9f78-6d5efe4523ab.png)
 
 테이블 줄 때에는  컬럼명 다음에 자료형을 결정 자료형 다음에 기본값이 필요하다면 기본값을 설정 할 수 있고 생략이 가능하다. [DEFAULT 'test']  [CONSTRAINT 제약조건명 제약조건 종류]
 
@@ -351,13 +351,13 @@ NOT NULL제약조건은 굳이 쓸 필요 없다.
 
 기존에 테이블이 있으면 DROP TABLE로 제거하면 된다.
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%206.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%206.png)
+![7](https://user-images.githubusercontent.com/63957819/104623663-f1390200-56d5-11eb-99f8-5e52982cadf5.png)
 
 기존에 정보가 다 되어있는 곳 에다 제약조건을 추가하는 거기 때문에 ADD CONSTARINT로 제약조건을 추가
 
 NOT NULL은 컬럼레벨로만 제약조건을 추가하는 것이므로 이미 테이블이 만들어져 있으면 추가하지 못하고 MODIFY로 컬럼레벨을 변경하는 것 이다. 
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%207.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%207.png)
+![8](https://user-images.githubusercontent.com/63957819/104623668-f1390200-56d5-11eb-89f4-fc7c5e921e05.png)
 
 order_linedl order-info하고 product 테이블을 참조할 거다. 
 
@@ -369,7 +369,7 @@ order_line 테이블이 order_info로 참조할 수 있게 order_line테이블�
 
 order_line 테이블이 자식 쪽으로 fk키로 각각 참조를 할 거다. order_quantity는 음수가 되면 안된다. 주문 수량에 관련 조건은 check로 설정하는데 조건은 0보다 크게 설정을 해야 한다. 이런 제약 조건을 테이블 레벨 제약 조건으로 만들자
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%208.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%208.png)
+![9](https://user-images.githubusercontent.com/63957819/104623669-f1d19880-56d5-11eb-8ac5-94684dbd6b27.png)
 
 상품이 먼저 등록(INSERT)이 되어 있어야 주문을 할 수 있는 거다. 상세 주문을 할 때 Order_line에 들어갈 수 있는 거다. 다른 것이 들어갈 수 있으므로 fk로 지정
 
@@ -447,13 +447,13 @@ INSERT INTO customer(id, pwd, name) VALUES ('id7', 'p7', 'n7');
 
 출력 결과>>
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%209.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%209.png)
+![10](https://user-images.githubusercontent.com/63957819/104623671-f1d19880-56d5-11eb-96ed-afc27d8de4dc.png)
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2010.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2010.png)
+![11](https://user-images.githubusercontent.com/63957819/104623674-f26a2f00-56d5-11eb-84ea-118a4035d812.png)
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2011.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2011.png)
+![12](https://user-images.githubusercontent.com/63957819/104623675-f302c580-56d5-11eb-8bcf-3c351e18127a.png)
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2012.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2012.png)
+![13](https://user-images.githubusercontent.com/63957819/104623677-f39b5c00-56d5-11eb-94d2-ad563a449423.png)
 
 sqldeveloper 또 하나 띄어서 접속 해보자 Localscott 더블 클릭
 
@@ -461,7 +461,7 @@ sqldeveloper 또 하나 띄어서 접속 해보자 Localscott 더블 클릭
 
 예를들어 계좌이체 1, 2번 작업 중에 뭐라도 틀렸으면 원 상태로 복구해야 한다. 없었던 일처럼 복구해야 한다.  원 상태로 복구 시키는 방법(rollback)이랑 성공을 시키는 방법(commit) 두 가지가 있다
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2013.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2013.png)
+![14](https://user-images.githubusercontent.com/63957819/104623680-f39b5c00-56d5-11eb-91f8-819993edab6d.png)
 
 트랜잭션이 자동 시작이 된다. 트랜잭션이 완료가 되는데, DML은 자동 완료가 안된다. DDL구문은 트랜잭션이 자동 완료가 된다. 즉 DB에 반영이 된다.
 
@@ -477,14 +477,14 @@ SQL> select * from customer;
 
 첫 번째, 두 번째에서 INSERT한 작업이 같은 트랜잭션이 이루어진 거다. 트랜잭션이 각각 만들어지는게 아니다 한 트랜잭션이 INSERT구문이 두 번 실행 된 거다. 같은 트랜잭션에서의 작업이라 보면 된다. 실제DB반영하기 위해 commit을 해줘야 한다.
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2014.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2014.png)
+![15](https://user-images.githubusercontent.com/63957819/104623681-f433f280-56d5-11eb-8093-70ff5b8df8cc.png)
 
 sqldeveloper에서 제대로 출력 된 걸 볼 수 있다.
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2015.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2015.png)
+![16](https://user-images.githubusercontent.com/63957819/104623682-f433f280-56d5-11eb-8e81-bd156d140371.png)
 
 sqldeveloper에서 id7번 추가 해보자
 
-![day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2016.png](day06%20e5566d9aa5a9427dbd28edb2ecb6ea84/Untitled%2016.png)
+![17](https://user-images.githubusercontent.com/63957819/104623684-f4cc8900-56d5-11eb-8f6a-a45d7120136f.png)
 
 sqlplus로 들어가서 보면  sqldevleoper에서 추가한 id7번 고객을 볼 수 없다.
