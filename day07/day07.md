@@ -71,11 +71,11 @@ DELETE와 TRUNCATE의 차이는 무엇일까?
 
 DELETE 트랜잭션이 완료되지 않기 때문에 롤백,커밋 여지가 있지만, TRUNCATE는 행을 삭제를 하자마자 트랜잭션이 자동 완료되어서 롤백을 할 수 가 없다.
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled.png)
+![1](https://user-images.githubusercontent.com/63957819/104811409-ac7caa80-583e-11eb-8aec-f9dbd13c9fef.png)
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%201.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%201.png)
+![2](https://user-images.githubusercontent.com/63957819/104811410-adadd780-583e-11eb-8efe-f72201a6dfcc.png)
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%202.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%202.png)
+![3](https://user-images.githubusercontent.com/63957819/104811411-adadd780-583e-11eb-939c-84b4665063aa.png)
 
 DML구문을 수행하게 되면 트랜잭션 시작되고 자동 완료 안되고 아직 DB에 반영되지 않은 상태로 있는거고 sqlplus 자료를 확인하면 909번이 나타나지 않을 것으로  나타난다.
 
@@ -83,13 +83,13 @@ DML구문을 수행하게 되면 트랜잭션 시작되고 자동 완료 안되�
 
 select는 dml과 다른 형태로 새로운 트랜잭션이 만들어졌다가 select구문 수행 후에 트랜잭션이 자동 수행 완료된다. 새로운 트랜잭션이 끝날 때 까지 잠깐 기다리는 거다.  끝나면 기존 첫 번째 트랜잭션이 작업을 하는거다. 
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%203.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%203.png)
+![4](https://user-images.githubusercontent.com/63957819/104811413-ae466e00-583e-11eb-962f-582b98a058db.png)
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%204.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%204.png)
+![5](https://user-images.githubusercontent.com/63957819/104811414-ae466e00-583e-11eb-8a7b-5a84148fb126.png)
 
 커밋을 해주면 sqlplus에서 자료를 확인하면 909번 나타난 것을 볼 수 있다.
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%205.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%205.png)
+![6](https://user-images.githubusercontent.com/63957819/104811415-aedf0480-583e-11eb-824d-084796c180c5.png)
 
 sqldeveloper에서 delete해주고 sqlplus에서도 똑같이 delete해주면 sqlplus에서 데드락 상태가 된다.
 
@@ -97,11 +97,11 @@ sqldeveoper delete한 자료가 db에 반영이 완료가 되어야 다른 트�
 
 rollback을 해서 취소 완료가 되면 기다리던 트랜잭션이 처리된다.
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%206.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%206.png)
+![7](https://user-images.githubusercontent.com/63957819/104811416-aedf0480-583e-11eb-9589-24258cdf1cdc.png)
 
 sqldeveloper에서 rollback을 했으니 delete를 안 한 것이므로 원 상태로 둔 거다. 909번이 존재하는 상태에서 sqlplus에서 1건이 삭제된 것을 볼 수 있다.
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%207.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%207.png)
+![8](https://user-images.githubusercontent.com/63957819/104811417-af779b00-583e-11eb-9b38-430f78df901e.png)
 
 중간중간 SAVEPOINT를 할 수 있는데 예를들어, 마지막에 ROLLBACK TO SAVEPOINT C 하면 C지점까지만 롤백을 하는 거다. 중간중간 SAVEPOINT지정해서 롤백 할 영역을 설정 해주면 된다.
 
@@ -145,11 +145,11 @@ SELECT TABLE_NAME FROM USER_TABLES;
 
 **인덱스 생성 지침**
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%208.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%208.png)
+![9](https://user-images.githubusercontent.com/63957819/104811419-af779b00-583e-11eb-9dc1-29de3b0881f7.png)
 
 **interview question) 언제 인덱스를 만들고 만들지 말아야 되는가??**
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%209.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%209.png)
+![10](https://user-images.githubusercontent.com/63957819/104811420-b0103180-583e-11eb-901b-16f6bb4e81ac.png)
 
 UNIQUE제약 조건을 설정하면 그 컬럼에 인덱스가 만들어 지듯이 PRIMARY제약 조건도 설정하면 자동 인덱스가 만들어진다. 
 
@@ -217,11 +217,11 @@ SELECT *
 FROM user_views; --데이터 사전 보기
 ```
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2010.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2010.png)
+![11](https://user-images.githubusercontent.com/63957819/104811421-b0a8c800-583e-11eb-84ca-c7c26c3115a7.png)
 
 LocalSYSTEM에서 view권한 설정을 해줘야 한다. ⇒ GRANT create view TO scott;
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2011.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2011.png)
+![12](https://user-images.githubusercontent.com/63957819/104811422-b0a8c800-583e-11eb-8b5e-88ec28f28bfb.png)
 
 뷰에 VW_ORDER클릭해서 SQL을 보면 만든 view를 확인해 볼 수 있다.
 
@@ -303,7 +303,7 @@ CREATE SEQUENCE order_seq; --시작값이 1, 1씩 증가 최대 맥스값까지 
 ---------------------------------------------------
 ```
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2012.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2012.png)
+![13](https://user-images.githubusercontent.com/63957819/104811423-b1415e80-583e-11eb-9383-83ffcf7628b1.png)
 
 CURRVAL 먼저 사용하면 오류가 뜬다.  먼저 NEXTVAL 를 하고 CURRVAL 를 해야 한다.
 
@@ -323,7 +323,7 @@ DROP SYNONYM을 사용하여 동의어를 삭제
 
 GRANT(권한 부여) ↔ REVOKE(권한 취소)
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2013.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2013.png)
+![14](https://user-images.githubusercontent.com/63957819/104811424-b1415e80-583e-11eb-9c1b-e8de88a35eda.png)
 
 다른 유저가 갖고 있는 테이블을 쉽게  참조할 수 있다.
 
@@ -335,7 +335,7 @@ object : 동의어를 생성할 객체를 식별
 
 public을 붙이지 않으면 private이 된다. 그 동의어는 동일한 유저가 소유한 모든 다른 객체와 구분되어야 한다. 
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2014.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2014.png)
+![15](https://user-images.githubusercontent.com/63957819/104811425-b1d9f500-583e-11eb-9a5b-4a384d9b2792.png)
 
 동의어를만드는목적? 다른 유저가 소유한 테이블을 쉽게 참조하기위해
 
@@ -436,9 +436,9 @@ CREATE TABLE t1(a number); --OK
 REVOKE CREATE SESSION FROM test; --접속권한 취소
 ```
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2015.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2015.png)
+![16](https://user-images.githubusercontent.com/63957819/104811427-b1d9f500-583e-11eb-841d-fbda69413635.png)
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2016.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2016.png)
+![17](https://user-images.githubusercontent.com/63957819/104811428-b2728b80-583e-11eb-896f-14c85b9367d2.png)
 
 ## PL/SQL 구조
 
@@ -497,11 +497,11 @@ PL/SQL 실행 결과를 화면에 출력하기 위해서는 SERVEROUTPUT환경 �
 
 **참조형**은 특정 테이블 열의 자료형이나 하나의 행 구조를 참조하는 자료형
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/20210115_160622.jpg](day07%206e59a63e002342ed96b6ece240c6f13b/20210115_160622.jpg)
+![18](https://user-images.githubusercontent.com/63957819/104811429-b2728b80-583e-11eb-9e6c-b51c5c5bb005.jpg)
 
 변수 이름 테이블이름.열이름**%TYPE**;  ex) dept **컬럼**의 자료형~
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/20210115_160827.jpg](day07%206e59a63e002342ed96b6ece240c6f13b/20210115_160827.jpg)
+![19](https://user-images.githubusercontent.com/63957819/104811430-b30b2200-583e-11eb-92fa-6cbe14624776.jpg)
 
 변수 이름 테이블 이름**%ROWTYPE**; ex) dept **행** 자료형
 
@@ -580,7 +580,7 @@ END;
 
 보기>DBMS출력 그리고 LocalSCOTT으로 접속
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2017.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2017.png)
+![20](https://user-images.githubusercontent.com/63957819/104811431-b30b2200-583e-11eb-870d-75e427f47790.png)
 
 ## 조건 제어문
 
@@ -636,7 +636,7 @@ FROM ...
 
 PL/SQL구문에서 SELECT 구문을 처리할 때 반드시 INTO절로처리하고 세미콜론으로 마무리 하여야 한다. INTO절에는 변수 이름을 적어주는데 변수의 자료형을 행 타입으로도 만들수있고 일반 자료형으로도 만들어서 쓸 수 있다.
 
-![day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2018.png](day07%206e59a63e002342ed96b6ece240c6f13b/Untitled%2018.png)
+![21](https://user-images.githubusercontent.com/63957819/104811433-b43c4f00-583e-11eb-82d1-a93a584f2f70.png)
 
 처음 select에서 부서 번호를 찾아 v_deptno대입시켜놓고deptno랑 같은 사원정보를 추출
 
