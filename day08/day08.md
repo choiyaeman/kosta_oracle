@@ -10,25 +10,24 @@
 
 customer, product는 부모 테이블 order_info, order_line은 자식 테이블이다 부모가 참조되어 있는 경우 부모를 삭제할 수 없다. 자식 테이블부터 먼저 삭제를 해줘야 한다.
 
- 3-3)자식엔터티테이블부터 삭제
+     3-3)자식엔터티테이블부터 삭제
 
- ORDER_LINE -0 건
+     ORDER_LINE -0 건
 
- ORDER_INFO -1건
+     ORDER_INFO -1건
 
- PRODUCT -0건
+     PRODUCT -0건
 
- CUSTOMER -7건
+     CUSTOMER -7건
 
- 3-4) SCOTT계정에 VIEW생성 권한을 추가
+     3-4) SCOTT계정에 VIEW생성 권한을 추가
 
- -SYSTEM계정으로 접속 ex) sqlplus system/kosta 
+     -SYSTEM계정으로 접속 ex) sqlplus system/kosta 
 
- -scott계정에 권한 부여 grant create view TO scott;
+     -scott계정에 권한 부여 grant create view TO scott;
 
- 3-5) 익스포트된 SQL파일을 sqlplus에서 로드 ex)sqlplus scott/tiger
-
-                                                                          @실습
+     3-5) 익스포트된 SQL파일을 sqlplus에서 로드 ex)sqlplus scott/tiger
+                                                   @실습
 
 ```sql
 SELECT * FROM order_line;
@@ -390,7 +389,7 @@ WHERE rno BETWEEN fun_start_row(-1, 5)  AND fun_end_row(-1, 5);
 
 FUNCTION은 결과 값이 리턴 되어야 하는데 정상 리턴 아니면 예외 결과 값이 리턴 되기도 가능하다. 이 RAISE_APPLICATION_ERROR함수가 강제로 예외를 발생 시키는 함수이다. PRIMARY키 중복일 경우 에러 코드 번호 1번이다. 사용자 정의 에러를 발생 시킬 때에는 에러 코드 범위가 있는데 -20000~20999이다.
 
-![day08%208a2764e949df402b9ec3f4f3716ddedf/Untitled.png](day08%208a2764e949df402b9ec3f4f3716ddedf/Untitled.png)
+![1](https://user-images.githubusercontent.com/63957819/104920127-b1766100-59da-11eb-8f20-ba9b4ae4aebf.png)
 
 ## 함수
 
@@ -547,7 +546,7 @@ ALTER TRIGGER 트리거 이름 ENABLE | DISABLE;
 
 DROP TRIGGER 트리거 이름;
 
-![day08%208a2764e949df402b9ec3f4f3716ddedf/Untitled%201.png](day08%208a2764e949df402b9ec3f4f3716ddedf/Untitled%201.png)
+![2](https://user-images.githubusercontent.com/63957819/104920131-b2a78e00-59da-11eb-8a5f-0a30d66f07ae.png)
 
 1번 작업에서 추가된 새로운 행이 2번 작업 :NEW이다. 
 
