@@ -27,8 +27,7 @@ customer, product는 부모 테이블 order_info, order_line은 자식 테이블
    -scott계정에 권한 부여 grant create view TO scott;
 
    3-5) 익스포트된 SQL파일을 sqlplus에서 로드 ex)sqlplus scott/tiger
-   
-                                                   @실습
+                                                @실습
 
 ```sql
 SELECT * FROM order_line;
