@@ -1,0 +1,19 @@
+1.오라클 설치 확인 c:\oraclexe
+2.오라클 서비스 확인 OracleServiceXE, OracleXETNSListener 시작됨
+3.오라클 SQLDeveloper확인/시작 
+     3-1)접속확인-localSYSTEM, localSCOTT, localHR
+     3-2)scott계정에 테이블 존재확인 - 
+              CUSTOMER, PRODUCT, ORDER_INFO, ORDER_LINE
+     3-3) 자식엔터티테이블부터 삭제
+              ORDER_LINE - 0건
+              ORDER_INFO -1건
+              PRODUCT - 0건
+              CUSTOMER  - 7건
+     3-4) SCOTT계정에 VIEW생성 권한을 추가
+            -SYSTEM계정으로 접속ex)sqlplus system/kosta
+            -scott계정에 권한부여     grant create view TO scott;         
+     3-5) 익스포트된 SQL파일을 sqlplus에서 로드 ex)sqlplus scott/tiger
+                                                                 >@실습.sql
+
+
+ 
