@@ -4,29 +4,29 @@
 2. 오라클 서비스 확인 OracleServiceXE, OracleXETNSListener 시작됨
 3. 오라클 SQLDeveloper확인/시작 
 
-     3-1)접속 확인-localSYSTEM, localSCOTT, localHR
+   3-1)접속 확인-localSYSTEM, localSCOTT, localHR
 
-     3-2)SCOTT계정에 테이블 존재 확인 - CUSTOMER, PRODUCT, ORDER_INFO, ORDER_LINE
+   3-2)SCOTT계정에 테이블 존재 확인 - CUSTOMER, PRODUCT, ORDER_INFO, ORDER_LINE
 
 customer, product는 부모 테이블 order_info, order_line은 자식 테이블이다 부모가 참조되어 있는 경우 부모를 삭제할 수 없다. 자식 테이블부터 먼저 삭제를 해줘야 한다.
 
-     3-3)자식엔터티테이블부터 삭제
+   3-3)자식엔터티테이블부터 삭제
 
-     ORDER_LINE -0 건
+   ORDER_LINE -0 건
 
-     ORDER_INFO -1건
+   ORDER_INFO -1건
 
-     PRODUCT -0건
+   PRODUCT -0건
 
-     CUSTOMER -7건
+   CUSTOMER -7건
 
-     3-4) SCOTT계정에 VIEW생성 권한을 추가
+   3-4) SCOTT계정에 VIEW생성 권한을 추가
 
-     -SYSTEM계정으로 접속 ex) sqlplus system/kosta 
+   -SYSTEM계정으로 접속 ex) sqlplus system/kosta 
 
-     -scott계정에 권한 부여 grant create view TO scott;
+   -scott계정에 권한 부여 grant create view TO scott;
 
-     3-5) 익스포트된 SQL파일을 sqlplus에서 로드 ex)sqlplus scott/tiger
+   3-5) 익스포트된 SQL파일을 sqlplus에서 로드 ex)sqlplus scott/tiger
                                                    @실습
 
 ```sql
