@@ -65,7 +65,7 @@ public class MyConnection {
 
 오라클 접속 어플리케이션을 개발하려면 드라이버(ojdbcXX.jar)를 사용할 수 있도록 빌드패스 설정
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled.png)
+![1](https://user-images.githubusercontent.com/63957819/105171673-e06b0f00-5b61-11eb-9beb-84f41d4a7835.png)
 
 새로운 jdbc1프로젝트 만들고 어제 했던 MyConnection 복사 붙여넣자!
 
@@ -77,7 +77,7 @@ con이라는 놈은 오라클데이터베이스와의 연결을 담당하는 소
 
 statement가 부모의 역할을 하고 preparedstatement가 자식의 역할을 한다. 부모타입으로 충분히 upcasting할 수 있다.
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%201.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%201.png)
+![2](https://user-images.githubusercontent.com/63957819/105171675-e19c3c00-5b61-11eb-8b14-2c5a0e264814.png)
 
 Myconnection.close(con, stmt); 사용하게 하려면 Statement stmt=con.~~; 되고 있어야 하고 stmt인자를 전달해줘야 한다.
 
@@ -91,13 +91,13 @@ getConnetion을 사용해야 하는데 static메서드들 보다 먼저 초기�
 
 적절한 위치는 static블록이다. static초기화 블럭이라 한다.
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%202.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%202.png)
+![3](https://user-images.githubusercontent.com/63957819/105171678-e234d280-5b61-11eb-8f75-45e630a8baea.png)
 
 하위 클래스(CustomerDAOOracle)에서도 구현해줘야 한다.
 
 메인뷰는 키보드로부터 값을 입력 받는 역할을 한다. 예를 들어 1번 선택 시 1번에 해당하는 일 처리를 하러 Controller가 제어하게 되어있다. 1번이 선택 되었을 경우 예를 들어 가입이라 하면 가입에 관련된 컨트롤용 메서드가 호출이 되고 실제 일 처리는 서비스에게 맡긴다. 서비스가 가입용 일 처리를 진행하게 된다. 서비스 단에서 필요한 dao메서드들을 여러 개 호출할 수 있다. 가입하려는 사람의 인증 절차를 진행하고 인증에 대한 절차가 완료가 되면 완료가 된 상태에서만 dao메서드를 호출하고 안되면 내치는 거다. dao는 DB하고 일만 하는 거다. DB하고 일을 하기 전에 하는 모든 절차를 하는 게 Service인 거다. 성공할 경우 결과 값을 Controller에게 보내줄 거다. Controller가 성공 시에는 Success View, 실패 시에 FailView라는 결과를 보여줄 view로 호출하는 거다. 가장 사용자와 만나는 쪽은 View단이다.  Controller에서는 실제 일 처리를 하는 게 아니고 Service에서 하는 거다.  View와 Controller는 웹으로 만들고 나머지는 웹, 일반어플 재사용이 되도록 할 거다.
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%203.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%203.png)
+![4](https://user-images.githubusercontent.com/63957819/105171680-e234d280-5b61-11eb-940a-eeb064f537c4.png)
 
 - CustomerDAOOracle.java
 
@@ -385,69 +385,69 @@ public class CustomerDAOOracle implements CustomerDAO {
 
 Customer클래스에 toString()가 오버라이딩 되어있어야 한다.
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%204.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%204.png)
+![5](https://user-images.githubusercontent.com/63957819/105171682-e2cd6900-5b61-11eb-91ee-ca94b4fcd7bc.png)
 
 메인메서드를 만들어서 insert메소드 호출하는 코드를 만들자
 
 **insert 실행 결과>**
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%205.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%205.png)
+![6](https://user-images.githubusercontent.com/63957819/105171684-e2cd6900-5b61-11eb-88db-f03044def933.png)
 
 추가 성공 시
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%206.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%206.png)
+![7](https://user-images.githubusercontent.com/63957819/105171687-e365ff80-5b61-11eb-8763-72fd820c4749.png)
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%207.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%207.png)
+![8](https://user-images.githubusercontent.com/63957819/105171689-e3fe9600-5b61-11eb-8590-9423bd4ee642.png)
 
 PK중복 시 발생
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%208.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%208.png)
+![9](https://user-images.githubusercontent.com/63957819/105171690-e3fe9600-5b61-11eb-8aa0-14ed84b5887a.png)
 
 pwd값을 안줄 때 null 오류 뜬다. not null 제약 조건 위배!
 
 **selectAll 실행 결과>**
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%209.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%209.png)
+![10](https://user-images.githubusercontent.com/63957819/105171691-e3fe9600-5b61-11eb-8d87-1193bfbe5f9b.png)
 
 **selectByIDSQL 실행 결과>**
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2010.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2010.png)
+![11](https://user-images.githubusercontent.com/63957819/105171694-e4972c80-5b61-11eb-9888-04a0e8500109.png)
 
 id가 일치할 경우
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2011.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2011.png)
+![12](https://user-images.githubusercontent.com/63957819/105171696-e52fc300-5b61-11eb-9c19-bb3c26e23f86.png)
 
 id에 해당하는 고객이 없는 경우
 
 **update 실행 결과>**
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2012.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2012.png)
+![13](https://user-images.githubusercontent.com/63957819/105171697-e52fc300-5b61-11eb-8d16-5ce0eeab67b6.png)
 
 비번, 이름 모두 수정
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2013.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2013.png)
+![14](https://user-images.githubusercontent.com/63957819/105171700-e5c85980-5b61-11eb-8e5f-601f00fe1793.png)
 
 비번만 수정
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2014.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2014.png)
+![15](https://user-images.githubusercontent.com/63957819/105171702-e5c85980-5b61-11eb-9f5a-a727725c0ef3.png)
 
 이름만 수정
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2015.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2015.png)
+![16](https://user-images.githubusercontent.com/63957819/105171705-e660f000-5b61-11eb-94e2-ed2457e8853c.png)
 
 수정할 내용이 없을 경우
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2016.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2016.png)
+![17](https://user-images.githubusercontent.com/63957819/105171707-e660f000-5b61-11eb-8bbd-b6283013c22d.png)
 
 sqldeveloper에서 아이디, 비번 변경된 것을 볼 수 있다.
 
 **delete 실행 결과>**
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2017.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2017.png)
+![18](https://user-images.githubusercontent.com/63957819/105171708-e6f98680-5b61-11eb-9ad4-3d6fafa983b8.png)
 
 아이디에 대한 해당 고객이 있을 경우 삭제 성공
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2018.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2018.png)
+![19](https://user-images.githubusercontent.com/63957819/105171709-e6f98680-5b61-11eb-86e8-4a01b30eca8f.png)
 
 아이디에 대한 해당 고객이 없을 경우 삭제 실패 해당 고객이x
 
@@ -507,9 +507,9 @@ public class CustomerService {
 }
 ```
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2019.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2019.png)
+![20](https://user-images.githubusercontent.com/63957819/105171710-e7921d00-5b61-11eb-83ea-47f8fb696b6b.png)
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2020.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2020.png)
+![21](https://user-images.githubusercontent.com/63957819/105171711-e7921d00-5b61-11eb-8dfc-4df0f67b2296.png)
 
 이런구조~
 
@@ -602,7 +602,7 @@ UPDATE customer SET name='n11' WHERE id='id11'
 사용법: 1.고객전체조회, 2.고객추가, 3.고객 ID로 조회,6.로그인,  9.종료
 작업을 선택하세요:9
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2021.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2021.png)
+![22](https://user-images.githubusercontent.com/63957819/105171712-e82ab380-5b61-11eb-840d-2b8dd1da7f6e.png)
 
 uml표기법에 메소드 부분에 밑줄이 그어져 있으면 static메서드이다. 
 
@@ -614,60 +614,60 @@ ER-Win을 쓰는거보다 대표 소프트웨어 중에 ExERD를 사용할 거�
 
 [https://ko.exerd.com/](https://ko.exerd.com/) > download> Eclipse플러그인으로 설치 3버전 클릭
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2022.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2022.png)
+![23](https://user-images.githubusercontent.com/63957819/105171713-e82ab380-5b61-11eb-8391-f6642b66c221.png)
 
 [https://exerd.com/update/3.x/](https://exerd.com/update/3.x/) url복사
 
 먼저, elicpse를 관리자 모드로 들어간다
 	
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2023.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2023.png)
+![24](https://user-images.githubusercontent.com/63957819/105171714-e8c34a00-5b61-11eb-8359-3d6dbfa3f9ed.png)
 
 그리고 복사한 url을 복붙해서 eXERD체크 후 설치
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2024.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2024.png)
+![25](https://user-images.githubusercontent.com/63957819/105171715-e8c34a00-5b61-11eb-9947-0ef75ad72417.png)
 
 File> new> Other> General> Project> Finsih
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2025.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2025.png)
+![26](https://user-images.githubusercontent.com/63957819/105171718-e95be080-5b61-11eb-8313-f2de72248836.png)
 
 ERD 오른쪽 클릭> new> Other> eXERD에 eXERD File 선택> Finish
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2026.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2026.png)
+![27](https://user-images.githubusercontent.com/63957819/105171719-e95be080-5b61-11eb-9e46-fff0d4a0fe19.png)
 
 DB에 있는 테이블을 다이어그램에 보여주는 것을 리버스 엔지니어링(역공학)이라 한다. (SCOTT.exerd, HR.exerd)
 
 다이어그램을 그려서 테이블로 생성하는 것을 순공학이라 한다.
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2027.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2027.png)
+![28](https://user-images.githubusercontent.com/63957819/105171721-e9f47700-5b61-11eb-9d39-841f6aebb393.png)
 
 exerd> exerd 환경 설정> exERD에 DBMS 연결 설정> Oracle 버전 선택 
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2028.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2028.png)
+![29](https://user-images.githubusercontent.com/63957819/105171722-e9f47700-5b61-11eb-943e-74c4b2de4b6a.png)
 
 exerd> 리버스 엔지니어링
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2029.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2029.png)
+![30](https://user-images.githubusercontent.com/63957819/105171724-ea8d0d80-5b61-11eb-899c-b5e5ab6a91e3.png)
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2030.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2030.png)
+![31](https://user-images.githubusercontent.com/63957819/105171727-ea8d0d80-5b61-11eb-9372-ad72124cd376.png)
 
 물리 이름을 논리 이름으로 사용 체크
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2031.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2031.png)
+![32](https://user-images.githubusercontent.com/63957819/105171729-eb25a400-5b61-11eb-8ee7-4539ee080d5f.png)
 
 맨 오른쪽 아래 초록색 프로그래스바 클릭 후 모든 테이블 선택 후 Next
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2032.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2032.png)
+![33](https://user-images.githubusercontent.com/63957819/105171732-eb25a400-5b61-11eb-8d04-32ee131b2f60.png)
 
 왼쪽은 ERD를 보여줄 목록 오른쪽 테이블은 목록을 의미함
 
 마찬가지로 HR.exerd도 만들어주자~
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2033.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2033.png)
+![34](https://user-images.githubusercontent.com/63957819/105171734-ebbe3a80-5b61-11eb-885c-3b91c9845ecb.png)
 
  
 
-![day10%209798e2186d7a4670b4b04685f8754686/Untitled%2034.png](day10%209798e2186d7a4670b4b04685f8754686/Untitled%2034.png)
+![35](https://user-images.githubusercontent.com/63957819/105171736-ebbe3a80-5b61-11eb-9791-d2694fac6911.png)
 
 점선으로 이어진 관계선은 비식별자 관계이다. employees하고 jobs테이블의 관계를 보자면 jobs라는 직무 정보가 먼저 추가되어 있어야 하고 employees의 사원 정보가 나중에 추가 되어야 한다.
 
