@@ -10,21 +10,21 @@ ctrl+enter 컬럼 이름을 만들 수 있다.
 
 테이블 오른쪽 마우스> 특성
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled.png)
+![1](https://user-images.githubusercontent.com/63957819/105337634-f50cdd00-5c1d-11eb-94fc-1525e2258cf8.png)
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%201.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%201.png)
+![2](https://user-images.githubusercontent.com/63957819/105337637-f63e0a00-5c1d-11eb-9d06-1ed3519c6758.png)
 
 마찬가지로 자식1테이블을 만들자
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%202.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%202.png)
+![3](https://user-images.githubusercontent.com/63957819/105337639-f6d6a080-5c1d-11eb-8f26-428476ec5dc0.png)
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%203.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%203.png)
+![4](https://user-images.githubusercontent.com/63957819/105337641-f6d6a080-5c1d-11eb-9b23-889b1b8f1269.png)
 
 새 비식별 관계를 만들자. 선택 할 때 자식이 부모를 참조하게 하려면 부모를 먼저 클릭 자식 쪽을 나중에 선택 해야 한다.
 
 주 식별자 할 때 컬림1이 추가가 된다. 부모의 PK를 자식의 PK로 컬럼을 참조하게 바뀐다.
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%204.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%204.png)
+![5](https://user-images.githubusercontent.com/63957819/105337643-f76f3700-5c1d-11eb-9da2-530f8a4a4f32.png)
 
 비식별자 선을 오른쪽 클릭> 특성>  자식 컬럼을 자식컬럼2로 바꿔보자
 
@@ -34,15 +34,15 @@ EXERD> 포워드 엔지니어링
 
 테이블 생성,삭제, PK인덱스 생성,삭제 PK제약사항 생성,  코멘트 생성만 체크 해주자 >NEXT(오류 무시)> FINISH 
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%205.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%205.png)
+![6](https://user-images.githubusercontent.com/63957819/105337645-f76f3700-5c1d-11eb-9500-2b748a4ed5d6.png)
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%206.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%206.png)
+![7](https://user-images.githubusercontent.com/63957819/105337646-f807cd80-5c1d-11eb-9e54-b21e24cd8beb.png)
 
 sqlplus에서 확인
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%207.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%207.png)
+![8](https://user-images.githubusercontent.com/63957819/105337648-f807cd80-5c1d-11eb-9f0d-bcb524157fc7.png)
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%208.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%208.png)
+![9](https://user-images.githubusercontent.com/63957819/105337650-f8a06400-5c1d-11eb-9c09-6f1fe58a801d.png)
 
 VO클래스의 관계를 보자 Customer.java하고 person.java가 있다. 이 둘의 관계는 상속 관계이다.
 
@@ -52,7 +52,7 @@ Customer IS A Person : 상속, Account IS A Person : X
 
 계좌는 계좌 번호, 잔액, 이름이 있다. 이름이라는 변수를 직접 갖는 게 아니라 Person클래스 타입의 p라는 변수를 멤버 변수로 갖도록 하자 Account가 Person을 사용한다. 사용 관계 연관 관계라 한다. Account HAS A Person → HAS A 관계이다.
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%209.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%209.png)
+![10](https://user-images.githubusercontent.com/63957819/105337652-f8a06400-5c1d-11eb-9f0a-94ba5c2974e5.png)
 
 JPA 는 자바를 이용한 영속성 유지 기술이라 한다. SQL 구문을 갖지 않고 예를 들어 Customer타입의 클래스 객체랑 Oracledb안에 있는 customer테이블이 있고 고객에 대한 행들이 있다 그 한 행과 계속 정보를 유지 시키는 맵핑 역할을 한다. 만약 customer객체 멤버 변수를 바꾸면 알아서 자동 테이블의 행 정보도 같이 바뀌게 된다. 거꾸로 행의 정보를 삭제를 해버리면 지금껏 연결되어있던 customer객체도 JVM메모리에서 없어지게 된다. 
 
@@ -60,7 +60,7 @@ SQL구문 없이도 알아서update, delete, select가 자동 처리가 된다.
 
 ---
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%2010.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%2010.png)
+![11](https://user-images.githubusercontent.com/63957819/105337655-f938fa80-5c1d-11eb-92a4-6063a5148948.png)
 
 일반 사용자 입장에서 로그인 안된 상태에서는 주문전까지만 가능
 고객은 모든일을 다 할 수 있다.
@@ -70,7 +70,7 @@ SQL구문 없이도 알아서update, delete, select가 자동 처리가 된다.
 
 고객 입장에서 주문 조회할 때 로그인을 한 다음 주문 조회를 할 거다. 주문 번호, 주문된 상품 번호, 상품 명, 상품의 가격이 얼마 짜리 인지 수량을 몇 개를 주문 했는지에 대한 정보가 나타나야 된다. 
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%2011.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%2011.png)
+![12](https://user-images.githubusercontent.com/63957819/105337657-f938fa80-5c1d-11eb-99d9-1d5b541659ea.png)
 
 ```java
 PS C:\Users\User> sqlplus scott/tiger
@@ -249,7 +249,7 @@ public class OrderLine {
 
 orderinfo에는 주문 기본정보가 들어있다. 
 
-![day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%2012.png](day11%20fa0297fe3fac4bcfb57a31f693264459/Untitled%2012.png)
+![13](https://user-images.githubusercontent.com/63957819/105337659-f9d19100-5c1d-11eb-9871-7ae2a9bcaabc.png)
 
 주문기본 입장에서 주문상세 입장으로 가져야 할지  주문상세 입장에서 주문 기본정보를 갖고 있어야 할지 잘 결정해야 한다.  많이 사용되는 형태로 has a 관계를 설정하면 된다.
 
